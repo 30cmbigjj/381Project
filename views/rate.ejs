@@ -1,0 +1,25 @@
+<html>
+
+<head>
+  <title>Rate </title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+
+  <div class="w3-container w3-blue">
+    <h2>Rate</h2>
+  </div>
+
+  <p>
+    <form class="w3-container" acton="/rate" method="post" style="width:50%">
+      <input type="hidden" name="id" value="<%=res%>">
+      <label class="w3-label w3-validate">Score (1-10):</label>
+      <input class="w3-input" type="number" name="score" min=1 max=10 required>
+      <input class="w3-button w3-blue" type="submit" value="Rate" />
+      <button class="w3-button w3-blue" onclick="history.back()">Back</button>
+    </form>
+
+</body>
+
+</html>

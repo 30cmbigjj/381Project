@@ -1,0 +1,72 @@
+<html>
+
+<head>
+	<title>Details</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+
+	<header class="w3-container w3-blue">
+		<h2>
+			<%=restaurant.name%>
+		</h2>
+		<a href="/">Home</a>
+		<a href="/logout">Logout</a>
+	</header>
+	<% if(restaurant.data){ %>
+		<img src="data:<%=restaurant.mimetype%>;base64,<%=restaurant.data%>" />
+		<%}%>
+			<ul>
+				<li>Borough:
+					<%=restaurant.borough%>
+				</li>
+				<li>Cuisine:
+					<%=restaurant.cuisine%>
+				</li>
+				<li>Street:
+					<%=restaurant.street%>
+				</li>
+				<li>Building:
+					<%=restaurant.building%>
+				</li>
+				<li>Zipcode:
+					<%=restaurant.zipcode%>
+				</li>
+				<li>GPS:[
+					<%=restaurant.coor%>]</li>
+				<li>Rating:</li>
+				<ol>
+					<%var i=0;%>
+						<% if (restaurant.rate != null){ %>
+							<%for(i=0;i<restaurant.rate.length;i++){%>
+								<li>
+									<%=restaurant.rate[i].score%> (<%=restaurant.rate[i].owner%>)</li>
+								<%}}%>
+				</ol>
+				<li>Created by
+					<%=restaurant.owner%>
+				</li>
+			</ul>
+
+
+			<div class="w3-container">
+				<% if(restaurant.coor[0]!= '' && restaurant.coor[1] != ''){ %>
+					<a href="gmap?lon=<%=restaurant.coor[0]%>&lat=<%=restaurant.coor[1]%>&title=<%=restaurant.name%>" style="text-decoration: none">
+						<button class="w3-button w3-blue">Google Map</button>
+					</a>
+					<%}%>
+						<a href="/rate?id=<%=restaurant._id%>" style="text-decoration: none">
+							<button class="w3-button w3-blue">Rate</button>
+						</a>
+						<a href="/update?id=<%=restaurant._id%>" style="text-decoration: none">
+							<button class="w3-button w3-blue">Update</button>
+						</a>
+						<a href="/delete?id=<%=restaurant._id%>" style="text-decoration: none">
+							<button class="w3-button w3-blue">Delete</button>
+						</a>
+						<button class="w3-button w3-blue" style="text-decoration: none" onclick="history.back()">Back</button>
+			</div>
+</body>
+
+</html>

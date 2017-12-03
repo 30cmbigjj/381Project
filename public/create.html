@@ -1,0 +1,74 @@
+<html>
+
+<head>
+	<title>New Restaurant</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+	<header class="w3-container w3-blue">
+		<h2>Create New Restaurant</h2>
+		<a href="/">Home</a>
+		<a href="/logout">Logout</a>
+	</header>
+
+	<form action="/create" method="Post" class="w3-container" style="width:75%" encType="multipart/form-data">
+		<p>
+			<label class="w3-label w3-validate" for="name">Name</label>
+			<input class="w3-input" type="text" name="name" id="name" required/>
+
+		</p>
+
+		<p>
+			<label class="w3-label w3-validate" for="borough">Borough</label>
+			<input class="w3-input" type="text" name="borough" id="borough" />
+		</p>
+
+		<p>
+			<label class="w3-label w3-validate" for="cuisine">Cuisine</label>
+			<input class="w3-input" type="text" name="cuisine" id="cuisine" />
+
+		</p>
+
+		<p>
+			<label class="w3-label w3-validate" for="street">Street</label>
+			<input class="w3-input" type="text" name="street" id="street" />
+
+		</p>
+
+		<p>
+			<label class="w3-label w3-validate" for="building">Building</label>
+			<input class="w3-input" type="text" name="building" id="building" />
+
+		</p>
+
+		<p>
+			<label class="w3-label w3-validate" for="zipcode">Zipcode</label>
+			<input class="w3-input" type="text" name="zipcode" id="zipcode" />
+
+		</p>
+
+		<p>
+			<label class="w3-label w3-validate" for="lon">GPS Corrdinates (lon.)</label>
+			<input class="w3-input" type="text" name="lon" id="lon" />
+
+		</p>
+
+		<p>
+			<label class="w3-label w3-validate" for="lat">GPS Corrdinates (lat.)</label>
+			<input class="w3-input" type="text" name="lat" id="lat" />
+
+		</p>
+
+		<p>
+			<label class="w3-label w3-validate" for="photo">Photo</label>
+			<input class="w3-input" type="file" name="sampleFile" id="sampleFile" />
+
+		</p>
+
+		<p>
+				<input type="Submit" value="Create"/>
+		</p>
+	</form>
+</body>
+</html>

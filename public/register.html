@@ -1,0 +1,33 @@
+<html>
+
+<head>
+	<title>Register</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+	<header class="w3-container w3-blue">
+		<h1>Register User</h1>
+	</header>
+	<form action="/register" method="Post" class="w3-container" style="width:50%">
+		<p>
+			<label class="w3-label w3-validate" for="name">User Name</label>
+			<input class="w3-input" type="text" name="name" id="name" required/>
+		</p>
+		<p>
+			<label class="w3-label w3-validate" for="password">Password</label>
+			<input class="w3-input" type="password" name="password">
+
+		</p>
+		<p>
+			<input class="w3-button w3-blue" type="submit" value="Submit">
+		</p>
+	</form>
+
+	<button onclick="history.back()">Back</button>
+</body>
+
+<footer>
+</footer>
+
+</html>

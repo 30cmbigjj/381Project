@@ -1,0 +1,36 @@
+<html>
+    <head> 
+        <title>Google Map</title>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVAwQ_v2Zczr8-msqOyZVzjFNYJU5zcOg"></script>
+		<script type="text/javascript">
+            var loadMap = function() 
+            {
+				
+				var myLatLng = {lat: <%=lat%>, lng: <%=lon%>};
+                var map = new google.maps.Map(document.getElementById("map"),{
+				      zoom: 20,
+				      center: myLatLng
+				}); 
+				var map = new google.maps.Marker({
+					position: myLatLng,
+					map: map,
+					title: <%=title%>
+				});
+            };
+            window.onload= loadMap;
+        </script>
+	</head>
+	
+    <body>
+			<header class="w3-container w3-blue">
+					<h1><%=title%></h1>
+					<a href="/">Home</a>
+					<a href="/logout">Logout</a>
+				</header>
+			<aside>
+        	<div id="map" style="width:500px;height:500px;">
+			</aside>
+<button class="w3-btn w3-blue" onclick="history.back()">Back</button>
+    </body>
+</html>

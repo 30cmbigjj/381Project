@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>search Page</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+    <header class="w3-container w3-blue">
+        <h1>Search</h1>
+        <a href="/">Home</a>
+		<a href="/logout">Logout</a>
+    </header>
+
+    <form action="/Filtering" method="Post" class="w3-container" style="width:50%">
+        <br>
+        Filtering criteria:
+        <p>
+            <select class="w3-select">
+                <option value="borough">borough</option>
+                <option value="name">name</option>
+                <option value="cuisine">cuisine</option>
+                <option value="street">street</option>
+                <option value="building">building</option>
+                <option value="zipcode">zipcode</option>
+            </select>
+            <br>
+            <input class="w3-input" type="text" name="name" id="name" required/>
+        </p>
+        <br>
+        <input class="w3-button w3-blue" type="submit" value="Submit"> 
+        <button class="w3-btn w3-blue" onclick="history.back()">Back</button>
+    </form>
+    
+</body>
+</html>

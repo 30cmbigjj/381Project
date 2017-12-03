@@ -1,0 +1,80 @@
+<html>
+
+<head>
+	<title>Update Restaurant</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+	<header class="w3-container w3-blue">
+		<h2>
+				Update Restaurant
+		</h2>
+		<a href="/">Home</a>
+		<a href="/logout">Logout</a>
+	</header>
+
+	<form action="/update" method="Post" class="w3-container" style="width:75%" encType="multipart/form-data">
+		<input type="hidden" name="id" value="<%=result._id%>" />
+		<p>
+			<label class="w3-label w3-validate" for="name">Name</label>
+			<input class="w3-input" type="text" name="name" id="name" value="<%=result.name%>" required/>
+
+		</p>
+
+		<p>
+			<label class="w3-label w3-validate" for="borough">Borough</label>
+			<input class="w3-input" type="text" name="borough" id="borough" value="<%=result.borough%>" />
+		</p>
+
+		<p>
+			<label class="w3-label w3-validate" for="cuisine">Cuisine</label>
+			<input class="w3-input" type="text" name="cuisine" id="cuisine" value="<%=result.cuisine%>"//>
+
+		</p>
+
+		<p>
+			<label class="w3-label w3-validate" for="street">Street</label>
+			<input class="w3-input" type="text" name="street" id="street" value="<%=result.street%>"/>
+
+		</p>
+
+		<p>
+			<label class="w3-label w3-validate" for="building">Building</label>
+			<input class="w3-input" type="text" name="building" id="building" value="<%=result.building%>"/>
+
+		</p>
+
+		<p>
+			<label class="w3-label w3-validate" for="zipcode">Zipcode</label>
+			<input class="w3-input" type="text" name="zipcode" id="zipcode" value="<%=result.zipcode%>"/>
+
+		</p>
+
+		<p>
+			<label class="w3-label w3-validate" for="lon">GPS Corrdinates (lon.)</label>
+			<input class="w3-input" type="text" name="lon" id="lon" value="<%=result.coor[1]%>"/>
+
+		</p>
+
+		<p>
+			<label class="w3-label w3-validate" for="lat">GPS Corrdinates (lat.)</label>
+			<input class="w3-input" type="text" name="lat" id="lat" value="<%=result.coor[0]%>"/>
+
+		</p>
+
+		<p>
+			<% if (result.data!= ''){ %>
+				<img src="data:<%=result.mimetype%>;base64,<%=result.data%>" />
+				<%}%>
+					<label class="w3-label w3-validate" for="photo">Photo</label>
+					<input class="w3-input" type="file" name="sampleFile" id="sampleFile" />
+		</p>
+		<p>
+
+			<input type="Submit" value="Update" />
+		</p>
+	</form>
+</body>
+
+</html>
