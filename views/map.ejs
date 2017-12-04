@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Simple Map</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+	</style>
+<header class="w3-container w3-blue">
+		<h1><%=title%></h1>
+		<a href="/">Home</a>
+		<a href="/logout">Logout</a>
+		<button class="w3-button w3-blue" style="text-decoration: none" onclick="history.back()">Back</button>
+	</header>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+	  var map;
+	  var myLatLng = { lat: <%=lat%>, lng: <%=lon%> };
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+		  //center: {lat: -34.397, lng: 150.644},
+          center: myLatLng,
+          zoom: 20
+		});
+		var map = new google.maps.Marker({
+				position: myLatLng,
+				map: map
+			});
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVAwQ_v2Zczr8-msqOyZVzjFNYJU5zcOg&callback=initMap"
+	async defer></script>
+  </body>
+</html>
